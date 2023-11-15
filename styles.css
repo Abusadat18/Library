@@ -77,11 +77,10 @@ body {
   font-weight: bold;
 }
 
-.book-icon {
+.card3 > .book-icon {
   display: grid;
   grid-template-columns: min-content;
   justify-content: end;
-  align-items: center;
 }
 
 .delete-icon:hover {

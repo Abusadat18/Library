@@ -1,8 +1,3 @@
-/* 1) Ek book store krne ka array chayiee.
-2) Book ka sara details add krne ka constructor
-3) new book ko array me dalna  
-4) Print krna
- */
 let myLibrary = [];
 const body = document.querySelector("body");
 const dialog = document.querySelector(".dialogBox");
