@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/b75e553fb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body class="js-centre">
+    <div class="header">
+      <h1>My Library</h1>
+    </div>
+    <div class="books-container"></div>
+    <div class="dialog-ctn">
+      <dialog class="dialogBox">
+        <form>
+          <h2>Add New Book</h2>
+          <div class="name-ctn">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="author-ctn">
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author" required />
+          </div>
+          <div class="pageCount-ctn">
+            <label for="no_of_pages">Number Of Pages:</label>
+            <input type="tel" name="no_of_pages" id="no_of_pages" required />
+          </div>
+          <div class="status-ctn">
+            <label for="status">Have You Read The Book ?</label>
+            <input type="checkbox" name="status" id="status" />
+          </div>
+          <div class="btn-container">
+            <button type="button" class="cancelBtn">Cancel</button>
+            <button class="confirmBtn">Confirm</button>
+          </div>
+        </form>
+      </dialog>
+      <button class="addBook">Add new Book</button>
+    </div>
+  </body>
+</html>
