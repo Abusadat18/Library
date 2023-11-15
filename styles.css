@@ -18,16 +18,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
   font-size: 22px;
-  width: 70vw;
-  height: 100dvh;
-  overflow: hidden;
-  margin: 10px auto;
+  padding: 15px 40px;
 }
 
 .js-centre {
   justify-content: center;
+  height: 100dvh;
 }
 
 .header {
@@ -36,39 +34,73 @@ body {
 
 .books-container {
   align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  gap: 35px;
 }
 
 .book-card {
-  border: 3px solid #b0a695;
+  border: 6px solid #b0a695;
+  height: 200px;
   border-radius: 15px;
-  padding: 5px 10px;
+  padding: 9px 13px;
   display: grid;
-  grid-template-columns: max-content 1fr;
-  align-items: center;
+  grid-template-rows: min-content 1fr min-content;
   color: #776b5d;
 }
 
-.card-grid2 {
+.card1 {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
-  justify-content: end;
-  align-items: center;
-  gap: 25px;
+  grid-template-columns: max-content min-content;
+  justify-content: space-between;
+  border-bottom: 2px solid #b0a695;
+  padding-bottom: 9px;
+}
+
+.card2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card3 {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  cursor: pointer;
+  border-top: 2px solid #b0a695;
+  padding-top: 9px;
+}
+
+.book-icon {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card3:hover {
+  font-weight: bold;
 }
 
 .delete-icon:hover {
   color: red;
+  cursor: pointer;
 }
 
 .read {
   color: rgb(3, 165, 3);
 }
 
+.read:hover {
+  color: rgba(3, 165, 3, 0.515);
+}
+
 .not-read {
   color: red;
+}
+
+.not-read:hover {
+  color: rgba(255, 0, 0, 0.515);
 }
 
 .dialogBox {
@@ -139,10 +171,16 @@ input[type="checkbox"] {
 }
 
 .addBook {
+  border: none;
   padding: 10px 15px;
   background-color: #776b5d;
   color: #f3eeea;
-  border-radius: 10px;
+  border-radius: 100%;
+}
+
+.addBook:hover {
+  background-color: #776b5dbb;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 473px) {

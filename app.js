@@ -41,6 +41,14 @@ function checkStatus(status) {
     }
 }
 
+function isRead(status) {
+    if (status) {
+        return "Read";
+    } else {
+        return "Not Read"
+    }
+}
+
 function display() {
     emptyDisplay(); 
     if (myLibrary.length == 0) {
@@ -50,14 +58,19 @@ function display() {
     }
     myLibrary.forEach((newBook,index) => {
         booksContainer.innerHTML += `<div class="book-card">
-        <div class="card-grid1">
-          <h3>${newBook.name}</h3>
-          <p>${newBook.author}</p>
-        </div>
-        <div class="card-grid2">
+        <div class="card1">
           <p>${newBook.no_of_pages} pages</p>
-          <i class="fa-solid fa-book-open-reader book-icon ${checkStatus(newBook.status)}"></i>
           <i class="fa-solid fa-trash delete-icon" data-key="${index}"></i>
+        </div>
+        <div class="card2">
+          <h3>${newBook.name}</h3>
+          <p>By ${newBook.author}</p>
+        </div>
+        <div class="card3">
+          <p class="status-text">${isRead(newBook.status)}</p>
+          <i
+            class="fa-solid fa-book-open-reader book-icon ${checkStatus(newBook.status)}"
+          ></i>
         </div>
       </div>`;
     })
@@ -67,19 +80,25 @@ function display() {
 
 function setReadToggle() {
     if (myLibrary.length > 0) {
+
+        const gridCards3 = document.querySelectorAll(".card3");
         const statusBtns = document.querySelectorAll(".book-icon");
-        statusBtns.forEach((btn,index) => {
-            btn.addEventListener("click", () => {
-                if (btn.classList.contains("read")) {
-                    btn.classList.remove("read");
-                    btn.classList.add("not-read");
+        const statusTextArr = document.querySelectorAll(".status-text")  
+        gridCards3.forEach((card,index) => {
+            card.addEventListener("click", () => {
+                if (statusBtns[index].classList.contains("read")) {
+                    statusBtns[index].classList.remove("read");
+                    statusBtns[index].classList.add("not-read");
+                    statusTextArr[index].textContent = "Not Read"
                     myLibrary[index].status = false; 
                 } 
                 else {
-                    btn.classList.remove("not-read");
-                    btn.classList.add("read");
+                    statusBtns[index].classList.remove("not-read");
+                    statusBtns[index].classList.add("read");
+                    statusTextArr[index].textContent = "Read"
                     myLibrary[index].status = true;
                 }
+                
             })
         })
     }
