@@ -130,6 +130,7 @@ confirmBtn.addEventListener("click", (e) => {
 })
 
 cancelBtn.addEventListener("click", () => {
+    reset();
     dialog.close();
 })
 
